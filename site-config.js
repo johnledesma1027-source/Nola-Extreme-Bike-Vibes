@@ -52,7 +52,7 @@ window.SITE = {
         ["Light-up cruisers", "Included"],
         ["Food", "Included"],
         ["Drinks", "Included"],
-        ["Price", "Call for a quote"], // TODO: add a per-person price if he wants one shown
+        ["Price", "$25 per person"],
       ],
     },
   ],
