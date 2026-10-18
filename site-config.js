@@ -36,7 +36,7 @@ window.SITE = {
   videos: [
     { title: "Ride with Nola Extreme", facebook: "https://www.facebook.com/share/r/1PHxQZ4NYv/", file: "" },
     { title: "Feel the vibes", facebook: "https://www.facebook.com/share/r/18KhmKgEXi/", file: "" },
-    { title: "Wheelies on the levee", facebook: "", file: "" }, // TODO
+    { title: "Party on wheels", facebook: "https://www.facebook.com/share/r/1GjZH7xq71/", file: "" },
     { title: "Second line on two wheels", facebook: "", file: "" }, // TODO
   ],
 
