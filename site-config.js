@@ -37,7 +37,7 @@ window.SITE = {
     { title: "Ride with Nola Extreme", facebook: "https://www.facebook.com/share/r/1PHxQZ4NYv/", file: "" },
     { title: "Feel the vibes", facebook: "https://www.facebook.com/share/r/18KhmKgEXi/", file: "" },
     { title: "Party on wheels", facebook: "https://www.facebook.com/share/r/1GjZH7xq71/", file: "" },
-    { title: "Second line on two wheels", facebook: "", file: "" }, // TODO
+    { title: "Light up the night", facebook: "https://www.facebook.com/share/r/1CEjxpBgVv/", file: "" },
   ],
 
   // What's offered. Events and groups only (25+ riders), food and drinks
