@@ -35,7 +35,7 @@ window.SITE = {
   // Or use a local file with `file: "assets/videos/ride1.mp4"`.
   videos: [
     { title: "Ride with Nola Extreme", facebook: "https://www.facebook.com/share/r/1PHxQZ4NYv/", file: "" },
-    { title: "Lakefront sunset cruise", facebook: "", file: "" }, // TODO
+    { title: "Feel the vibes", facebook: "https://www.facebook.com/share/r/18KhmKgEXi/", file: "" },
     { title: "Wheelies on the levee", facebook: "", file: "" }, // TODO
     { title: "Second line on two wheels", facebook: "", file: "" }, // TODO
   ],
