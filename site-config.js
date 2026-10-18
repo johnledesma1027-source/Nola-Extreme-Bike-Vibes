@@ -67,9 +67,9 @@ window.SITE = {
     { icon: "✨", name: "And much more" },
   ],
 
-  // Opening hours. TODO: confirm.
+  // Opening hours. Each row is [day, hours].
   hours: [
-    ["Mon to Thu", "TBD"],
-    ["Fri to Sun", "TBD"],
+    ["Any day", "By appointment"],
+    ["Book", "Call or text (504) 237-6997"],
   ],
 };
