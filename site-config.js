@@ -40,18 +40,18 @@ window.SITE = {
     { title: "Second line on two wheels", facebook: "", file: "" }, // TODO
   ],
 
-  // Bikes and prices. TODO: replace with real bikes and rates.
+  // Bikes and prices. Only the light-up cruisers are rented. TODO: real rates.
   bikes: [
     {
       name: "Light-Up Cruiser",
-      tag: "Signature ride",
+      tag: "The ride",
       desc: "The glowing purple beach cruiser with LED wheels and a NOLA Vibes basket. Turns heads on Bourbon St.",
       prices: [["1 hour", "$TBD"], ["Half day", "$TBD"], ["Full day", "$TBD"]],
     },
     {
       name: "Group & Event Ride",
       tag: "Parties + events",
-      desc: "A fleet of light-up bikes for your whole crew: birthdays, weddings, reunions and more.",
+      desc: "Light-up cruisers for your whole crew: birthdays, weddings, reunions and more.",
       prices: [["Per rider", "$TBD"], ["Group of 10+", "Ask us"]],
     },
   ],
