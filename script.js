@@ -48,7 +48,7 @@
       <h3>${esc(k.name)}</h3>
       <p>${esc(k.desc)}</p>
       <ul>${k.prices.map(([t, p]) => `<li><span>${esc(t)}</span><b>${esc(p)}</b></li>`).join("")}</ul>
-      <a class="btn" href="${esc(b.bookingUrl || "#contact")}">Rent this one</a>
+      <a class="btn" href="${esc(b.bookingUrl || "#contact")}">Book your event</a>
     </article>`).join("");
 
   // Event services

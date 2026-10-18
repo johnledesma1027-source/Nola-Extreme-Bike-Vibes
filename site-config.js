@@ -40,19 +40,20 @@ window.SITE = {
     { title: "Second line on two wheels", facebook: "", file: "" }, // TODO
   ],
 
-  // Bikes and prices. Only the light-up cruisers are rented. TODO: real rates.
+  // What's offered. Events and groups only (25+ riders), food and drinks
+  // included. No hourly rentals. Each row is [label, value].
   bikes: [
     {
-      name: "Light-Up Cruiser",
-      tag: "The ride",
-      desc: "The glowing purple beach cruiser with LED wheels and a NOLA Vibes basket. Turns heads on Bourbon St.",
-      prices: [["1 hour", "$TBD"], ["Half day", "$TBD"], ["Full day", "$TBD"]],
-    },
-    {
-      name: "Group & Event Ride",
-      tag: "Parties + events",
-      desc: "Light-up cruisers for your whole crew: birthdays, weddings, reunions and more.",
-      prices: [["Per rider", "$TBD"], ["Group of 10+", "Ask us"]],
+      name: "The Event Ride",
+      tag: "Groups of 25+",
+      desc: "A whole crew on glowing purple light-up cruisers, rolling through New Orleans together. Food and drinks are part of the package.",
+      prices: [
+        ["Group size", "25+ riders"],
+        ["Light-up cruisers", "Included"],
+        ["Food", "Included"],
+        ["Drinks", "Included"],
+        ["Price", "Call for a quote"], // TODO: add a per-person price if he wants one shown
+      ],
     },
   ],
 

@@ -172,7 +172,7 @@ h1, h2, h3, .logo, .btn, .num { font-family: "Bebas Neue", Impact, sans-serif; l
 @media (min-width: 700px) {
   .video-grid { grid-template-columns: repeat(2, 1fr); }
   .steps, .service-grid { grid-template-columns: repeat(3, 1fr); }
-  .bike-grid { grid-template-columns: repeat(auto-fit, minmax(300px, 380px)); justify-content: center; }
+  .bike-grid { grid-template-columns: minmax(0, 520px); justify-content: center; }
   .flyer-wrap { grid-template-columns: 1fr 1fr; }
 }
 @media (min-width: 900px) {
