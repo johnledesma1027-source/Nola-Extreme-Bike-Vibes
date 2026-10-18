@@ -12,7 +12,7 @@ window.SITE = {
     owner: "Michael Butler",
     phone: "(504) 237-6997", // call or text to book
     email: "", // TODO: e.g. "ride@nolaextremebikevibes.com"
-    address: "New Orleans, LA", // we come to your event; no fixed pickup spot
+    address: "New Orleans, LA", // no fixed meeting spot
     mapQuery: "New Orleans, LA", // what Google Maps searches for
     facebook: "https://www.facebook.com/share/19n7hZc3R4/",
     instagram: "", // TODO
