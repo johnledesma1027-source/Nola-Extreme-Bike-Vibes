@@ -8,7 +8,7 @@
 window.SITE = {
   business: {
     name: "Nola Extreme Bike Vibes",
-    tagline: "Ride Bold. Create Memories.",
+    tagline: "It's always a vibe when you book these bike rides",
     owner: "Michael Butler",
     phone: "(504) 237-6997", // call or text to book
     email: "", // TODO: e.g. "ride@nolaextremebikevibes.com"
