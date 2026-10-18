@@ -34,7 +34,7 @@ window.SITE = {
   // video (open the video, Share > Copy link) into `facebook`.
   // Or use a local file with `file: "assets/videos/ride1.mp4"`.
   videos: [
-    { title: "Night ride through the Quarter", facebook: "", file: "" }, // TODO
+    { title: "Ride with Nola Extreme", facebook: "https://www.facebook.com/share/r/1PHxQZ4NYv/", file: "" },
     { title: "Lakefront sunset cruise", facebook: "", file: "" }, // TODO
     { title: "Wheelies on the levee", facebook: "", file: "" }, // TODO
     { title: "Second line on two wheels", facebook: "", file: "" }, // TODO
