@@ -40,19 +40,17 @@ window.SITE = {
     { title: "Light up the night", facebook: "https://www.facebook.com/share/r/1CEjxpBgVv/", file: "" },
   ],
 
-  // What's offered. Events and groups only (25+ riders), food and drinks
-  // included. No hourly rentals. Each row is [label, value].
+  // What's offered. Events and groups only, $25 per rider for any size.
+  // Groups of more than 25 get food and drinks included. Rows are [label, value].
   bikes: [
     {
       name: "The Event Ride",
-      tag: "Groups of 25+",
-      desc: "A whole crew on glowing purple light-up cruisers, rolling through New Orleans together. Food and drinks are part of the package.",
+      tag: "Events & groups",
+      desc: "Your whole crew on glowing purple light-up cruisers, rolling through New Orleans together. Bring more than 25 riders and the food and drinks are on us.",
       prices: [
-        ["Group size", "25+ riders"],
-        ["Light-up cruisers", "Included"],
-        ["Food", "Included"],
-        ["Drinks", "Included"],
-        ["Price", "$25 per person"],
+        ["Price", "$25 per rider"],
+        ["Light-up cruiser", "Included"],
+        ["Food & drinks", "Included for groups of more than 25"],
       ],
     },
   ],
@@ -70,6 +68,6 @@ window.SITE = {
   // Opening hours. Each row is [day, hours].
   hours: [
     ["Any day", "By appointment"],
-    ["Book", "Call or text (504) 237-6997"],
+    ["Price", "$25 per rider"],
   ],
 };
