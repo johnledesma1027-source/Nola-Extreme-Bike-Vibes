@@ -21,21 +21,28 @@
   src.addEventListener("error", () => hv.remove());
   hv.appendChild(src);
 
-  // Video grid
+  // Video grid. Facebook won't reliably play its videos inside other sites,
+  // so Facebook links open the video on Facebook when tapped. Local files play
+  // right on the page with the normal play button.
   const grid = $("#video-grid");
-  S.videos.forEach((v) => {
-    const card = document.createElement("div");
-    card.className = "video-card";
-    if (v.facebook) {
-      const url = "https://www.facebook.com/plugins/video.php?href=" + encodeURIComponent(v.facebook) + "&show_text=false";
-      card.innerHTML = `<iframe src="${esc(url)}" title="${esc(v.title)}" loading="lazy" allow="autoplay; encrypted-media; picture-in-picture; web-share" allowfullscreen></iframe>`;
-    } else if (v.file) {
-      card.innerHTML = `<video src="${esc(v.file)}" muted loop playsinline preload="metadata"></video><div class="label">${esc(v.title)}</div>`;
-      const vid = card.querySelector("video");
-      // Play when on screen, pause when off
-      new IntersectionObserver(([e]) => (e.isIntersecting ? vid.play().catch(() => {}) : vid.pause()), { threshold: 0.5 }).observe(vid);
+  S.videos.forEach((v, i) => {
+    let card;
+    if (v.file) {
+      card = document.createElement("div");
+      card.className = "video-card";
+      card.innerHTML = `<video src="${esc(v.file)}" controls playsinline preload="metadata" poster="${esc(S.hero.poster)}"></video><div class="label">${esc(v.title)}</div>`;
+    } else if (v.facebook) {
+      card = document.createElement("a");
+      card.className = "video-card fb";
+      card.href = v.facebook;
+      card.target = "_blank";
+      card.rel = "noopener";
+      card.style.setProperty("--pos", ["center", "20% 50%", "80% 50%", "60% 20%"][i % 4]);
+      card.style.backgroundImage = `linear-gradient(180deg, rgba(11,6,20,.1) 30%, rgba(11,6,20,.92)), url("${S.hero.poster}")`;
+      card.innerHTML = `<span class="play" aria-hidden="true">▶</span><strong>${esc(v.title)}</strong><small>Tap to watch on Facebook ↗</small>`;
     } else {
-      card.classList.add("placeholder");
+      card = document.createElement("div");
+      card.className = "video-card placeholder";
       card.innerHTML = `<div><div class="play">▶</div><strong>${esc(v.title)}</strong><small>Video coming soon</small></div>`;
     }
     grid.appendChild(card);
