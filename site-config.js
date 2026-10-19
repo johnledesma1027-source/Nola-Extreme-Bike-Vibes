@@ -26,16 +26,17 @@ window.SITE = {
   // assets/videos/ and put its path here. Short (10-20s), no sound,
   // under ~8 MB works best. Poster image shows while it loads.
   hero: {
-    video: "assets/videos/hero.mp4", // TODO: add the file
-    poster: "assets/images/hero.jpg", // cropped from the flyer; swap for a real photo
+    video: "assets/videos/hero.mp4", // Canal Street group ride, no sound
+    poster: "assets/images/hero.jpg", // cropped from the flyer; shows until the video starts
   },
 
-  // Videos from the Facebook feed. Paste the link of each Facebook
-  // video (open the video, Share > Copy link) into `facebook`.
-  // Or use a local file with `file: "assets/videos/ride1.mp4"`.
+  // Videos from the Facebook feed. A local `file` plays right on the page
+  // when tapped (`poster` is the still shown before it plays). Without a
+  // file, a `facebook` link (open the video, Share > Copy link) opens the
+  // video on Facebook instead.
   videos: [
-    { title: "Ride with Nola Extreme", facebook: "https://www.facebook.com/share/r/1PHxQZ4NYv/", file: "" },
-    { title: "Feel the vibes", facebook: "https://www.facebook.com/share/r/18KhmKgEXi/", file: "" },
+    { title: "Lighting up the French Quarter", file: "assets/videos/ride-quarter.mp4", poster: "assets/images/ride-quarter.jpg", facebook: "" },
+    { title: "Rolling deep down Canal Street", file: "assets/videos/ride-canal.mp4", poster: "assets/images/ride-canal.jpg", facebook: "" },
     { title: "Party on wheels", facebook: "https://www.facebook.com/share/r/1GjZH7xq71/", file: "" },
     { title: "Light up the night", facebook: "https://www.facebook.com/share/r/1CEjxpBgVv/", file: "" },
   ],
