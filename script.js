@@ -9,28 +9,52 @@
   document.querySelectorAll(".js-book").forEach((a) => (a.href = b.bookingUrl || "#contact"));
   document.querySelectorAll(".js-fb").forEach((a) => (a.href = b.facebook));
 
-  // Hero video: only attach if the file exists, otherwise keep the gradient
+  // Hero video plays muted in the background. If it's missing, the browser
+  // won't autoplay it (e.g. iPhone Low Power Mode) or the visitor prefers
+  // less motion, it's removed and the poster image behind it shows instead.
   const hv = $(".hero-video");
   hv.poster = S.hero.poster;
   document.querySelector(".hero").style.backgroundImage =
     `radial-gradient(circle at 20% 30%, rgba(166,77,255,.45), transparent 50%), url("${S.hero.poster}")`;
-  hv.addEventListener("error", () => hv.remove(), true);
-  const src = document.createElement("source");
-  src.src = S.hero.video;
-  src.type = "video/mp4";
-  src.addEventListener("error", () => hv.remove());
-  hv.appendChild(src);
+  if (!S.hero.video || matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    hv.remove();
+  } else {
+    hv.addEventListener("error", () => hv.remove(), true);
+    const src = document.createElement("source");
+    src.src = S.hero.video;
+    src.type = "video/mp4";
+    src.addEventListener("error", () => hv.remove());
+    hv.appendChild(src);
+    hv.muted = true;
+    hv.play().catch(() => hv.remove());
+  }
 
-  // Video grid. Facebook won't reliably play its videos inside other sites,
-  // so Facebook links open the video on Facebook when tapped. Local files play
-  // right on the page with the normal play button.
+  // Video grid. Local files play right on the page when tapped, with sound
+  // and the normal video controls. Facebook won't reliably play its videos
+  // inside other sites, so Facebook links open the video on Facebook instead.
   const grid = $("#video-grid");
   S.videos.forEach((v, i) => {
     let card;
     if (v.file) {
       card = document.createElement("div");
-      card.className = "video-card";
-      card.innerHTML = `<video src="${esc(v.file)}" controls playsinline preload="metadata" poster="${esc(S.hero.poster)}"></video><div class="label">${esc(v.title)}</div>`;
+      card.className = "video-card local";
+      card.innerHTML = `<video src="${esc(v.file)}" playsinline preload="metadata" poster="${esc(v.poster || S.hero.poster)}"></video>
+        <button class="tap" type="button"><span class="play" aria-hidden="true">▶</span><strong>${esc(v.title)}</strong><small>Tap to play</small></button>`;
+      const vid = card.querySelector("video");
+      card.querySelector(".tap").addEventListener("click", () => {
+        vid.controls = true;
+        vid.play().catch(() => {});
+      });
+      // Only one ride plays at a time; when one ends, its card goes back to the start.
+      vid.addEventListener("play", () => {
+        card.classList.add("playing");
+        grid.querySelectorAll("video").forEach((o) => o !== vid && o.pause());
+      });
+      vid.addEventListener("ended", () => {
+        card.classList.remove("playing");
+        vid.controls = false;
+        vid.load();
+      });
     } else if (v.facebook) {
       card = document.createElement("a");
       card.className = "video-card fb";
