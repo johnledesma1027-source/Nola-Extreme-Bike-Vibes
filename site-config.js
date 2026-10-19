@@ -37,7 +37,7 @@ window.SITE = {
   videos: [
     { title: "Lighting up the French Quarter", file: "assets/videos/ride-quarter.mp4", poster: "assets/images/ride-quarter.jpg", facebook: "" },
     { title: "Rolling deep down Canal Street", file: "assets/videos/ride-canal.mp4", poster: "assets/images/ride-canal.jpg", facebook: "" },
-    { title: "Party on wheels", facebook: "https://www.facebook.com/share/r/1GjZH7xq71/", file: "" },
+    { title: "Wheels that glow all night", file: "assets/videos/ride-glow.mp4", poster: "assets/images/ride-glow.jpg", facebook: "" },
     { title: "Light up the night", facebook: "https://www.facebook.com/share/r/1CEjxpBgVv/", file: "" },
   ],
 
