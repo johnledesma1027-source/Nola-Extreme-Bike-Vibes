@@ -38,7 +38,7 @@ window.SITE = {
     { title: "Lighting up the French Quarter", file: "assets/videos/ride-quarter.mp4", poster: "assets/images/ride-quarter.jpg", facebook: "" },
     { title: "Rolling deep down Canal Street", file: "assets/videos/ride-canal.mp4", poster: "assets/images/ride-canal.jpg", facebook: "" },
     { title: "Wheels that glow all night", file: "assets/videos/ride-glow.mp4", poster: "assets/images/ride-glow.jpg", facebook: "" },
-    { title: "Light up the night", facebook: "https://www.facebook.com/share/r/1CEjxpBgVv/", file: "" },
+    { title: "Roll out with the whole crew", file: "assets/videos/ride-crew.mp4", poster: "assets/images/ride-crew.jpg", facebook: "" },
   ],
 
   // What's offered. Events and groups only, $25 per rider for any size.
