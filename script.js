@@ -26,7 +26,10 @@
     src.addEventListener("error", () => hv.remove());
     hv.appendChild(src);
     hv.muted = true;
-    hv.play().catch(() => hv.remove());
+    // Only give up when the browser refuses autoplay. A pause while it loads
+    // (switching apps, locking the phone) rejects with AbortError, and the
+    // browser resumes the loop by itself afterwards.
+    hv.play().catch((e) => { if (e.name !== "AbortError") hv.remove(); });
   }
 
   // Video grid. Local files play right on the page when tapped, with sound
@@ -43,6 +46,7 @@
       const vid = card.querySelector("video");
       card.querySelector(".tap").addEventListener("click", () => {
         vid.controls = true;
+        vid.focus({ preventScroll: true }); // keep keyboard and VoiceOver users on the player
         vid.play().catch(() => {});
       });
       // Only one ride plays at a time; when one ends, its card goes back to the start.
